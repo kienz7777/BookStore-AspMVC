@@ -1,0 +1,114 @@
+﻿@model BookStoreASP.Models.Sach
+
+@{
+    ViewBag.Title = "ChinhSuaSach";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutManage.cshtml";
+}
+
+
+@using (Html.BeginForm("ChinhSuaSach", "Admin", new { idSach = Model.MaSach}, FormMethod.Post))
+{
+    <div class="addProduct">
+        <div class="title">
+            <h4>Thông tin sản phẩm</h4>
+            <p>VUI LÒNG CUNG CẤP CÁC THÔNG TIN CẦN SỬA</p>
+        </div>
+        <div class="col-lg-9">
+            <div class="table">
+                <div class="infoTable">
+                    <div class="info">
+                        <div class="head"><p>Thông tin chung</p></div>
+                        <h5>@ViewBag.ThongBao</h5>
+                        <form>
+                            <div class="formBox">
+                                <div class="form-group">
+                                    <p>Chọn ngày</p>
+                                    <input value="@Html.DisplayFor(modelItem => Model.NgayCapNhat)" id="datepicker" width="220" name="NgayCapNhat" />
+                                    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+                                    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+                                    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+                                    <script>
+                                        $('#datepicker').datepicker({
+                                            uiLibrary: 'bootstrap4'
+                                        });
+                                    </script>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Tựa đề sách</p>
+                                <input value="@Html.DisplayFor(modelItem => Model.TenSach)" type="text" class="form-control" id="" placeholder="" name="TenSach">
+                            </div>
+                            <div class="formBox">
+                                <div class="form-group width">
+                                    <p>Nhà xuất bản</p>
+                                    <div>
+                                        @Html.DropDownList("MaNXB")
+                                    </div>
+                                </div>
+                                <div class="form-group width">
+                                    <p>Chủ đề</p>
+
+                                    <div>
+                                        @Html.DropDownList("MaChuDe")
+                                    </div>
+                                </div>
+                                <div class="form-group add">
+                                    <p>Số lượng</p>
+                                    <div class="input-group mb-3">
+                                        <input value="@Html.DisplayFor(modelItem => Model.SoLuong)" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" name="SoLuong">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Mô tả sản phẩm</p>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="MoTa">@Html.DisplayFor(modelItem => Model.MoTa)"</textarea>
+                            </div>
+                            <div class="formBox">
+                                <div class="formImage form-group">
+                                    <p>Ảnh bìa</p>
+                                    <div class="form-group image">
+                                        <div id="msg"></div>
+                                        <form method="post" id="image-form">
+                                            <input type="file" name="fileUpLoad" class="file" accept="image/*" >
+                                            <div class="input-group my-3">
+                                                <input value="@Html.DisplayFor(modelItem => Model.AnhBia)" type="text" class="form-control" disabled="" placeholder="Upload File" id="file" name="AnhBia">
+                                                <div class="input-group-append">
+                                                    <button type="button" class="browse btn btn-primary">Browse...</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="form-group image">
+                                        <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formBox">
+                                <div class="form-group">
+                                    <p>Giá bán</p>
+                                    <input value="@Html.DisplayFor(modelItem => Model.GiaBan)" type="" class="form-control" id="exampleInputPassword1" placeholder="" name="GiaBan">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <a href="@Url.Action("XemChiTietSanPham", "Admin", new { idSach = Model.MaSach }, null)" class="btn btn-secondary" data-dismiss="modal">Hủy</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="timePick">
+        <div class="table">
+            <div class="infoTable">
+                <div class="info">
+                    <form>
+                        <img src="~/Assets/themsanpham.png" width="240px" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

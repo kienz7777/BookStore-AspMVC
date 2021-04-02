@@ -1,0 +1,133 @@
+
+body{
+    display: flex;
+    background-color: #f7f7f7;
+}
+a {
+    text-decoration: none;
+    font-size: 17px;
+    color: #0D30C6;
+    font-weight: 600;
+}
+a:hover{
+    text-decoration: none;
+}
+p{
+    margin-bottom: 2px;
+}
+.col-lg-9{
+    max-width: 100%;
+}
+.formMain{
+    display: flex;
+}
+form{
+    padding-bottom: 10px;
+}
+.list-group-item.active {
+    background-color: #0d3064;
+    border: none;
+    background: rgba(208,213,221,.1);
+    border-left: 3px solid #fff;
+}
+.list-group-item-action{
+    background-color: #0d3064;
+    color: #7790b6;
+    font-size: 14px;
+}
+.list-group-item-action:hover {
+    background-color: #0d346a;
+    color: #7790b6;
+}
+i{
+    margin-right: 5px;
+}
+
+/*---------------------------*/
+
+body{
+    display: flex;
+    background-color: #f7f7f7;
+}
+.viewProduct .title{
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 25px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.viewProduct .title > p{
+    font-weight: 900;
+    font-size: 12px;
+    color: #7a8699;
+}
+.viewProduct .title > h4 {
+    font-weight: 900;
+    color: #0d3064;
+}
+.search > form{
+    width: 975px;
+    display: flex;
+    padding-left: 25px;
+}
+.search .input-group{
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    border-radius: 40px;
+}
+.search .input-group > p{
+    position: absolute;
+    z-index: 1;
+    margin-top: 7px;
+    margin-left: 15px;
+}
+.search .input-group .searchText{
+    padding-left: 38px;
+    z-index: 0;
+    border-radius: 40px;
+}
+.search .form-group .filter{
+    border-radius: 40px;
+    width: 107px;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+/*------------------*/
+
+.board{
+    padding-left: 25px;
+    overflow: auto;
+}
+ .board .infoBoard{
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+    .board .infoBoard > h5 {
+        padding: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: #ed380e;
+    }
+    .table td, .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+.table-hover tbody tr:hover {
+    color: #0d3064;
+    background-color: rgba(0,0,0,.075);
+}
+.table > tbody > tr > td > a > img {
+    max-width: 50px;
+    max-height: 50px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ebecf0;
+    vertical-align: middle;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}

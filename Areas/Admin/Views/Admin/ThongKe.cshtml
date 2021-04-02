@@ -1,0 +1,111 @@
+﻿@model IEnumerable<BookStoreASP.Models.ThongKeDoanhThuThang>
+@{
+    ViewBag.Title = "ThongKe";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutManage.cshtml";
+}
+
+    @using (Html.BeginForm("ThongKe", "Admin", FormMethod.Post))
+    {
+    <div class="addProduct">
+        <div class="title">
+            <h4>Thông tin sản phẩm</h4>
+            <p>VUI LÒNG CUNG CẤP CÁC THÔNG TIN VỀ SẢN PHẨM SẼ TẠO</p>
+        </div>
+        <div class="col-lg-9">
+            <div class="table">
+                <div class="infoTable">
+                    <div class="info">
+                        <div class="head"><p>Thông tin chung</p></div>
+                        <form>
+                            <div class="form-group width">
+                                <p>Chọn năm</p>
+
+                                <select class="form-control" name="ChonNam">
+                                    <option>2019</option>
+                                    <option>2020</option>
+                                    <option>2021</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Xem</button>
+                        </form>
+                        <div class="container">
+                            <iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+                            <canvas id="myChart" width="1710" height="855" style="display: block;height: 416px;width: 722px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+
+        // Global Options
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 10;
+        Chart.defaults.global.defaultFontColor = '#0d3064';
+
+        let massPopChart = new Chart(myChart, {
+            type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+                labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10', 'T11', 'T12'],
+                datasets: [{
+                    label: 'Doanh thu tháng',
+                    data: [
+                        @foreach (var value in Model)
+                        {
+                            @Html.DisplayFor(modelItem => value.Tong)
+                            @ViewBag.Dau
+                        }
+                    ],
+                    //backgroundColor:'green',
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(224, 255, 98, 0.6)',
+                        'rgba(87, 169, 124, 0.6)',
+                        'rgba(255, 99, 99, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 99, 132, 0.6)'
+
+                    ],
+                    borderWidth: 1,
+                    borderColor: '#777',
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: '#000'
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Tổng doanh thu theo tháng',
+                    fontSize: 25
+                },
+                legend: {
+                    display: true,
+                    position: 'right',
+                    labels: {
+                        fontColor: '#000'
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                },
+                tooltips: {
+                    enabled: true
+                }
+            }
+        });
+    </script>
+

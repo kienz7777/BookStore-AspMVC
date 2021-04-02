@@ -1,0 +1,208 @@
+*{margin: 0; padding: 0;}
+
+.showItem{}
+.showItem .row{}
+.showItem .showLeft{
+    width: 100%;
+    margin-top: 10%;
+   
+}
+    .showItem .showLeft .showImg {
+        width: 600px;
+        position: absolute;
+        top: -110px;
+        left: -55px;
+    }
+.showItem .showRight{}
+.showItem .showRight .showContent{
+    width: 100%;
+    height: 100%;
+    margin-top: 7%;
+}
+.showContent{}
+.showContent b{
+    font-size: 14px;
+    font-family: segoe ui light;
+    color: #00000075;
+}
+.showContent h3{
+    font-size: 28px;
+    font-family: segoe ui;
+    border-bottom: 1px solid #00000061;
+    padding-bottom: 15px;
+}
+.showContent .number{
+    width: 100%;
+    display: flex;
+    margin-top: 5%;
+}
+.number .decrease{
+    width: 35px;
+    margin-right: 5px;
+}
+.number .num{
+    width: 75px;
+    height: 38px;
+    text-align: center;
+    
+    padding-top: -7px;
+    
+}
+.number .increase{
+    width: 35px;
+    margin-left: 5px;
+}
+.showContent .buying{
+    width: 100%;
+    display: flex;
+    margin-top: 12%;
+   
+    justify-content: space-between;
+}
+
+
+.showContent .buying .buyLeft{
+    width: 48%;
+    height: 50px;
+    text-align: center;
+    padding-top: 13px;
+    background-color: white;
+    position: relative;
+    font-family: segoe ui;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.showContent .buying .buyLeft:after{
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;left: 0;
+    
+    background-color: black;
+    transform-origin: 0% 0%;
+    transform: scale(1, 1);
+    transition: 0.45s;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition-property: transform;
+}
+.showContent .buying .buyLeft span{
+    color: white;
+    position: absolute;
+    font-weight: 600;
+    top: 30%; left: 30%;
+    z-index: 2;
+    transition: 0.3s;
+}
+.showContent .buying .buyLeft:hover span{
+    color: black;
+}
+.showContent .buying .buyLeft:hover:after{
+    
+    transform-origin: 100% 100%;
+    transform: scale(0, 1);
+}
+
+
+
+    .showContent .buying .buyRight {
+        width: 48%;
+        height: 50px;
+        text-align: center;
+        padding-top: 13px;
+        background-color: white;
+        position: relative;
+        font-family: segoe ui;
+        border: 1px solid #ff0000;
+        cursor: pointer;
+    }
+
+.showContent .buying .buyRight:after{
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;left: 0;
+    
+    background-color: #ff0000;
+    transform-origin: 0% 0%;
+    transform: scale(1, 1);
+    transition: 0.45s;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition-property: transform;
+}
+.showContent .buying .buyRight span{
+    color: white;
+    position: absolute;
+    font-weight: 600;
+    top: 30%; left: 30%;
+    z-index: 2;
+    transition: 0.3s;
+}
+.showContent .buying .buyRight:hover span{
+    color: black;
+}
+.showContent .buying .buyRight:hover:after{
+    
+    transform-origin: 100% 100%;
+    transform: scale(0, 1);
+}
+
+
+
+
+.showContent .connectMe{
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-top: 13px;
+
+    position: relative;
+    font-family: segoe ui;
+    border: 1px solid #4267b2;
+    cursor: pointer;
+}
+
+.showContent .connectMe:after{
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;left: 0;
+    
+    background-color: #4267b2;
+    transform-origin: 0% 0%;
+    transform: scale(1, 1);
+    transition: 0.45s;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition-property: transform;
+}
+.showContent .connectMe span{
+    color: white;
+    position: absolute;
+    font-weight: 600;
+    top: 30%; left: 30%;
+    z-index: 2;
+    transition: 0.3s;
+}
+.showContent .connectMe:hover span{
+    color: black;
+}
+.showContent .connectMe:hover:after{
+    
+    transform-origin: 100% 100%;
+    transform: scale(0, 1);
+}
+
+a.watch {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index : 3;
+    display: inline-block;
+    text-indent: -9999px;
+}

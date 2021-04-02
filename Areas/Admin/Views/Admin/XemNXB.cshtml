@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BookStoreASP.Models.NXB>
+@{
+    ViewBag.Title = "XemNXB";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutManage.cshtml";
+}
+
+<div class="viewProduct">
+    <div class="title">
+        <h4>Danh sách nhà xuất bản</h4>
+        <p>VUI LÒNG CLICK VÀO NHÀ XUẤT BẢN ĐỂ XEM THÔNG TIN CHI TIẾT</p>
+    </div>
+    <div class="search">
+        @using (Html.BeginForm())
+        {
+            <form>
+                <div class="form-group width">
+                    <a href="@Url.Action("ThemNXB","Admin")" class="form-control filter">
+                        Thêm NXB
+                    </a>
+                </div>
+                <div class="input-group mb-3">
+                    <p><i class="fa fa-search" aria-hidden="true"></i></p>
+                    <input type="text" class="form-control searchText" placeholder="Tìm kiếm NXB" aria-label="Username" aria-describedby="basic-addon1" name="TenNXB">
+                </div>
+            </form>
+        }
+    </div>
+    <div class="board">
+        <div class="infoBoard">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Mã NXB</th>
+                        <th scope="col">Tên NXB</th>
+                        <th scope="col">Địa Chỉ</th>
+                        <th scope="col">Số Lượng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@Html.DisplayFor(modelItem => item.MaNXB)</th>
+                            <td>
+                                <a href="@Url.Action("XemChiTietNXB","Admin", new { idNXB = item.MaNXB })">
+                                    @Html.DisplayFor(modelItem => item.TenNXB)
+                                </a>
+                            </td>
+                            <td>@Html.DisplayFor(modelItem => item.DiaChi)</td>
+                            <td>@Html.DisplayFor(modelItem => item.SDT)</td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+            <h5>@ViewBag.ThongBao</h5>
+        </div>
+    </div>
+</div>
+

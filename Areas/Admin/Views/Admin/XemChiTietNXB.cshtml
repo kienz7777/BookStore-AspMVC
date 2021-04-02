@@ -1,0 +1,56 @@
+﻿@model BookStoreASP.Models.NXB
+@{
+    ViewBag.Title = "XemChiTietNXB";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutManage.cshtml";
+}
+
+<div class="detailProduct">
+    <div class="title">
+        <h4>Thông tin nhà xuất bản</h4>
+        <p>BẠN CÓ THỂ CHỈNH SỬA VÀ XÓA NHÀ XUẤT BẢN TẠI ĐÂY </p>
+    </div>
+    <div class="board">
+        <div class="infoBoard">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a class="back" href="@Url.Action("XemNXB", "Admin")"><h3><i class="fa fa-arrow-left" aria-hidden="true"></i></h3></a>
+                    <a class="edit" href="@Url.Action("ChinhSuaNXB", "Admin", new { idNXB = Model.MaNXB }, null)"><h3><i class="fa fa-cog" aria-hidden="true"></i></h3></a>
+                    <a class="delete" href="" data-toggle="modal" data-target="#exampleModalCenter"><h3><i class="fa fa-trash" aria-hidden="true"></i></h3></a>
+                </li>
+
+                <li class="list-group-item"><h6 class="head">Mã NXB:</h6> <h6>@Html.DisplayFor(modelItem => Model.MaNXB)</h6></li>
+                <li class="list-group-item"><h6 class="head">Tên NXB:</h6> <h6>@Html.DisplayFor(modelItem => Model.TenNXB)</h6></li>
+                <li class="list-group-item"><h6 class="head">Địa chỉ:</h6> <h6>@Html.DisplayFor(modelItem => Model.DiaChi)</h6></li>
+                <li class="list-group-item"><h6 class="head">Số điện thoại:</h6> <h6>@Html.DisplayFor(modelItem => Model.SDT)</h6></li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Xóa NXB</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="nameBook">
+                        <p>Bạn có muốn xóa nhà xuất bản </p>
+                        <p class="name">@Html.DisplayFor(modelItem => Model.TenNXB)</p>
+                        <p>?</p>
+                    </div>
+                    <p>Nhà xuất bản đã xóa không thể phục hồi lại được.</p>
+                </div>
+                <div class="modal-footer">
+
+                    <a class="btn btn-secondary" data-dismiss="modal">Hủy</a>
+                    <a href="
+                            @Url.Action("XoaNXB", "Admin", new { idNXB = Model.MaNXB }, null)
+                       " class="btn btn-primary">Xóa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

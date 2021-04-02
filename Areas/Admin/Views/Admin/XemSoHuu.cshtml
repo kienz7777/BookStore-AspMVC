@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BookStoreASP.Models.SoHuu>
+@{
+    ViewBag.Title = "XemSoHuu";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutManage.cshtml";
+}
+
+<div class="viewProduct">
+    <div class="title">
+        <h4>Danh sách sở hữu</h4>
+        <p>XEM THÔNG TIN CHI TIẾT</p>
+    </div>
+    <div class="search">
+        @using (Html.BeginForm())
+        {
+            <form>
+                <div class="form-group width">
+                    <a href="@Url.Action("ThemSoHuu","Admin")" class="form-control filter">
+                        Thêm SH
+                    </a>
+                </div>
+            </form>
+        }
+    </div>
+    <div class="board">
+        <div class="infoBoard">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Mã Tác Giả</th>
+                        <th scope="col">Mã Sách</th>
+                        <th scope="col">Vị Trí</th>
+                        <th scope="col">Vai Trò</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@Html.DisplayFor(modelItem => item.MaTacGia)</th>
+                            <td>
+                               @Html.DisplayFor(modelItem => item.MaSach)
+                            </td>
+                            <td>@Html.DisplayFor(modelItem => item.ViTri)</td>
+                            <td>@Html.DisplayFor(modelItem => item.VaiTro)</td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+            <h5>@ViewBag.ThongBao</h5>
+        </div>
+    </div>
+</div>
+

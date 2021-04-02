@@ -1,0 +1,79 @@
+﻿@using BookStoreASP.Models;
+@model List<GioHang>
+
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="@Url.Content("~/Content/cart.css")">
+
+
+<table class="table table-bordered table-blue">
+    <thead>
+        <tr class="rowFirst">
+            <th scope="col">Tên Sách</th>
+            <th scope="col">Ảnh Bìa</th>
+            <th scope="col">Đơn Giá</th>
+            <th scope="col">Số Lượng</th>
+            <th scope="col">Thành Tiền</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.sTenSach</th>
+                    <td>
+                        <a href="@Url.Action("XemChiTiet", "Home", new { @MaSach = item.iMaSach})">
+                            <img class="imageCash" src="../Assets/@Url.Content(item.sAnhBia)" alt="">
+                        </a>
+
+                    </td>
+                    <td>
+                        @String.Format("{0:0,0}", item.dDonGia)đ
+                    </td>
+                    <td>@item.iSoLuong</td>
+                    <td>@String.Format("{0:0,0}", item.ThanhTien)đ</td>
+                </tr>
+            }
+        }
+        @*<tr>
+                <th scope="row">Besh Wish For You</th>
+                <td>Ảnh</td>
+                <td>15000đ</td>
+                <td>1</td>
+                <td>100000đ</td>
+            </tr>
+            <tr>
+                <th scope="row">Besh Wish For You</th>
+                <td>Ảnh</td>
+                <td>15000đ</td>
+                <td>1</td>
+                <td>100000đ</td>
+            </tr>
+            <tr>
+                <th scope="row">Besh Wish For You</th>
+                <td>Ảnh</td>
+                <td>15000đ</td>
+                <td>1</td>
+                <td>100000đ</td>
+            </tr>*@
+    </tbody>
+</table>
+
+<button type="button" style="margin-left: 70.5%;margin-top: 3%;" class="btn btn-danger">Tổng Tiền: @String.Format("{0:0,0}", @ViewBag.TongTien)đ</button>
+
+<div style="display:flex" class="cart">
+    <button type="button" class="btn btn-primary">@Html.ActionLink("Chỉnh Sửa", "SuaGioHang")</button>
+    @using (Html.BeginForm("DatHang", "GioHang"))
+    {
+        <button style="margin-left:5px;" type="submit" class="btn btn-success">Đặt Hàng</button>
+    }
+
+
+</div>

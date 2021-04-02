@@ -1,0 +1,98 @@
+﻿@model IEnumerable< BookStoreASP.Models.XemChiTietSanPham>
+@{
+    ViewBag.Title = "XemChiTietSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutManage.cshtml";
+}
+
+    <div class="detailProduct">
+        <div class="title">
+            <h4>Thông tin sản phẩm</h4>
+            <p>BẠN CÓ THỂ CHỈNH SỬA VÀ XÓA SÁCH TẠI ĐÂY </p>
+        </div>
+        <div class="board">
+            <div class="infoBoard">
+                @{
+                    foreach (var item in Model)
+                    {
+                        int a = 1;
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a class="back" href="@Url.Action("XemSanPham", "Admin")"><h3><i class="fa fa-arrow-left" aria-hidden="true"></i></h3></a>
+                                <a class="edit" href="@Url.Action("ChinhSuaSach", "Admin", new { idSach = item.MaSach }, null)"><h3><i class="fa fa-cog" aria-hidden="true"></i></h3></a>
+                                <a class="delete" href="" data-toggle="modal" data-target="#exampleModalCenter"><h3><i class="fa fa-trash" aria-hidden="true"></i></h3></a>
+                            </li>
+
+                            <li class="list-group-item"><h6 class="head">Mã sách:</h6> <h6>@Html.DisplayFor(modelItem => item.MaSach)</h6></li>
+                            <li class="list-group-item"><h6 class="head">Tên sách:</h6> <h6>@Html.DisplayFor(modelItem => item.TenSach)</h6></li>
+                            <li class="list-group-item"><h6 class="head">Giá bán:</h6> <h6>@Html.DisplayFor(modelItem => item.GiaBan) VNĐ</h6></li>
+                            <li class="list-group-item"><h6 class="head">Mô Tả:</h6> <h6>@Html.DisplayFor(modelItem => item.MoTa)</h6></li>
+                            <li class="list-group-item"><h6 class="head">Ngày Cập Nhật:</h6> <h6>@Html.DisplayFor(modelItem => item.NgayCapNhat)</h6></li>
+                            <li class="list-group-item"><h6 class="head">Số Lượng:</h6> <h6>@Html.DisplayFor(modelItem => item.SoLuong)</h6></li>
+                            <li class="list-group-item"><h6 class="head">Tên Nhà Xuất Bản:</h6> <h6>@Html.DisplayFor(modelItem => item.TenNXB)</h6></li>
+                            <li class="list-group-item"><h6 class="head">Tên Chủ Đề:</h6> <h6>@Html.DisplayFor(modelItem => item.TenChuDe)</h6></li>
+                            <li class="list-group-item">
+                                <h6 class="head">Tác Giả:</h6>
+                                @foreach (var i in Model)
+                                {
+                                    if (a != 1)
+                                    {
+                                        <h6>
+                                            +
+                                        </h6>
+                                    }
+                                    <h6>
+                                        @Html.DisplayFor(modelItem => i.TenTacGia)
+                                    </h6>
+                                    a++;
+                                }
+                            </li>
+                        </ul>
+                        <div class="coverImage">
+                            <img src="@Url.Content("~/Assets/" + item.AnhBia)" alt="Sản Phẩm 3">
+                        </div>
+                        break;
+                    }
+                }
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Xóa sản phẩm</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="nameBook">
+                            <p>Bạn có muốn xóa sản phẩm </p>
+                            @foreach (var item in Model)
+                            {
+                        <p class="name">@Html.DisplayFor(modelItem => item.TenSach)</p>
+                                break;
+                            }
+                            <p>?</p>
+                        </div>
+                        <p>Sản phẩm đã xóa không thể phục hồi lại được.</p>
+                    </div>
+                    <div class="modal-footer">
+
+                        <a class="btn btn-secondary" data-dismiss="modal">Hủy</a>
+                        @foreach (var item2 in Model)
+                        {
+                            <a href="
+                         
+                            @Url.Action("XoaSach", "Admin", new { idSach = item2.MaSach }, null)
+
+                        
+                       " class="btn btn-primary">Xóa</a>
+                       break;
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

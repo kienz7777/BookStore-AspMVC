@@ -1,0 +1,56 @@
+﻿@model BookStoreASP.Models.NXB
+
+@{
+    ViewBag.Title = "ChinhSuaNXB";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutManage.cshtml";
+}
+
+
+@using (Html.BeginForm("ChinhSuaNXB", "Admin", new { idNXB = Model.MaNXB }, FormMethod.Post))
+{
+    <div class="addProduct">
+        <div class="title">
+            <h4>Thông tin nhà xuất bản</h4>
+            <p>VUI LÒNG CUNG CẤP CÁC THÔNG TIN CẦN SỬA</p>
+        </div>
+        <div class="col-lg-9">
+            <div class="table">
+                <div class="infoTable">
+                    <div class="info">
+                        <div class="head"><p>Thông tin chung</p></div>
+                        <h5>@ViewBag.ThongBao</h5>
+                        <form>
+                            <div class="form-group">
+                                <p>Tên nhà xuất bản</p>
+                                <input value="@Html.DisplayFor(modelItem => Model.TenNXB)" type="" class="form-control" id="" placeholder="" name="TenNXB">
+                            </div>
+                            <div class="formBox">
+                                <div class="form-group">
+                                    <p>Địa chỉ</p>
+                                    <input value="@Html.DisplayFor(modelItem => Model.DiaChi)" type="" class="form-control" id="" placeholder="" name="DiaChi">
+                                </div>
+                                <div class="form-group">
+                                    <p>Số điện thoại</p>
+                                    <input value="@Html.DisplayFor(modelItem => Model.SDT)" type="" class="form-control" id="" placeholder="" name="SDT">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <a href="@Url.Action("XemChiTietNXB", "Admin", new { idNXB = Model.MaNXB }, null)" class="btn btn-secondary" data-dismiss="modal">Hủy</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="timePick">
+        <div class="table">
+            <div class="infoTable">
+                <div class="info">
+                    <form>
+                        <img src="~/Assets/themsanpham.png" width="240px" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

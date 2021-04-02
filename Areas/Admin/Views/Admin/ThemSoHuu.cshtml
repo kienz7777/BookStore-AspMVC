@@ -1,0 +1,71 @@
+﻿@model BookStoreASP.Models.SoHuu
+
+@{
+    ViewBag.Title = "ThemSoHuu";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutManage.cshtml";
+}
+
+
+@using (Html.BeginForm("ThemSoHuu", "Admin", FormMethod.Post))
+{
+    <div class="addProduct">
+        <div class="title">
+            <h4>Thông tin sở hữu</h4>
+            <p>VUI LÒNG CUNG CẤP CÁC THÔNG TIN VỀ SỠ HỮU BẢN SẼ TẠO</p>
+        </div>
+        <div class="col-lg-9">
+            <div class="table">
+                <div class="infoTable">
+                    <div class="info">
+                        <ul class="list-group list-group-flush head">
+                            <li class="list-group-item">
+                                <a class="back" href="@Url.Action("XemSanPham", "Admin")"><h3><i class="fa fa-arrow-left" aria-hidden="true"></i></h3></a>
+                            </li>
+                        </ul>
+                        <h5>@ViewBag.ThongBao</h5>
+                        <form>
+                            <div class="formBox">
+                                <div class="form-group width">
+                                    <p>Tên tác giả</p>
+                                    <div>
+                                        @Html.DropDownList("MaTacGia")
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formBox">
+                                <div class="form-group width">
+                                    <p>Tên sách</p>
+                                    <div>
+                                        @Html.DropDownList("MaSach")
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="formBox">
+                                    <div class="form-group">
+                                        <p>Vị trí</p>
+                                        <input type="" class="form-control" id="" placeholder="" name="ViTri">
+                                    </div>
+                                    <div class="form-group">
+                                        <p>Vai trò</p>
+                                        <input type="" class="form-control" id="" placeholder="" name="VaiTro">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Thêm mới</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="timePick">
+        <div class="table">
+            <div class="infoTable">
+                <div class="info">
+                    <form>
+                        <img src="~/Assets/ThemTacGia.jpg" width="240px" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

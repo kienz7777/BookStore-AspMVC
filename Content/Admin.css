@@ -1,0 +1,71 @@
+*{margin: 0; padding: 0;}
+h1,h2,h3,h4,h5,h6, p, label, button{
+    color: #272727;
+    margin: 0 0 13px 0;
+    font-weight: 500;
+    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+img.loginAdmin {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    
+    padding: 10% 10%;
+}
+
+.bck {
+    height: 615px;
+    background-color: #eaf0fa;
+}
+.rightContent{
+    justify-content: center;
+    display: flex;
+}
+.content{
+    width: 350px;
+    margin-top: 20%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.content > form{
+    text-align: left;
+}
+.content .form-group .form-control{
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.content .h2{
+    
+}
+.form-control{
+    width: 350px;
+    border-radius: 0%;
+    height: 50px;
+    background-color:#eaf0fa;
+    border: 1px solid #474d90;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+.btn-primary{
+    width: 350PX;
+    text-align: center;
+    border-radius: 0%;
+    background-color: #2d3057;
+    height: 50px;
+    border: none;
+}
+.content{}
+.content h3{}
+.content p{}
+.content h2{}

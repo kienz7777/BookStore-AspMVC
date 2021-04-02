@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "ForgetPass";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6  left">
+                <div class="text">
+                    <h2>Vui lòng nhập đúng OTP</h2>
+                    <h2 style="color:red">@ViewBag.message</h2>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6  right">
+                @using (Html.BeginForm())
+                {
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="OTP Code" name="email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Xác thực</button>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</article>
+
+

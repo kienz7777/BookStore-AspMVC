@@ -1,0 +1,336 @@
+﻿@using BookStoreASP.Models;
+@model List<Sach>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid  containSlide">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="slideBig">
+
+                <div id="slide" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#slide" data-slide-to="0" class="active"></li>
+                        <li data-target="#slide" data-slide-to="1"></li>
+                        <li data-target="#slide" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <a href="">
+                                <img src="../Assets/slideshow1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="">
+                                <img src="../Assets/slideshow2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="">
+                                <img src="../Assets/slideshow3.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#slide" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--Sản phẩm bán chạy-->
+@*code đưa sách từ csdl lên*@
+
+
+<div class="container-fluid containProduct">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="bestSeller">
+                <p>Sản phẩm bán chạy</p>
+                <div class="viewAll">
+                    <a href="#">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="loop col-lg-12">
+
+            @{
+
+                foreach (var item in Model)
+                {
+                    if (item.MaSach > 0 && item.MaSach < 5)
+                    {
+                        <div class="col-lg-3">
+
+                            <div class=productBlock>
+
+                                <a class="sach" href="@Url.Action("XemChiTiet", new {@Masach=item.MaSach })">
+                                    <img class="sanpham" src="../Assets/@Url.Content(item.AnhBia)" alt="Sản phẩm 1">
+                                </a>
+                                @*//////////////SUA*@
+                                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaSach = item.MaSach, @strURL = Request.Url.ToString() }))
+                                {<input class="num" type="text" value="1" name="boot" style="display:none">
+                                    <div class="buttonAdd">
+                                        <button type="button" class="buy">
+                                            <a href="~/GioHang/GioHang" style="display: inline-block;width: 100%;height: 100%;">
+                                                <div style="color:white;margin-top: 7px;">MUA NGAY</div>
+                                            </a>
+                                        </button>
+                                        <button type="submit" class="add-to-cart">THÊM VÀO GIỎ</button>
+                                    </div>
+                                }
+
+                                <div class="details">
+                                    <div class=nameProduct>
+                                        <a href="#">@item.TenSach</a>
+                                    </div>
+                                    <div class="priceProduct">
+                                        @String.Format("{0:0,0}", item.GiaBan)đ
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    }
+
+
+                }
+
+            }
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="loop col-lg-12">
+
+            @{  int i = 0; foreach (var item in Model) { i++; }
+                    foreach (var item in Model)
+                    {
+
+                        if (item.MaSach >= (i-4) && item.MaSach < i)
+                        {
+                        <div class="col-lg-3">
+
+                            <div class=productBlock>
+
+                                <a class="sach" href="@Url.Action("XemChiTiet", new {@Masach=item.MaSach })">
+                                    <img class="sanpham" src="../Assets/@Url.Content(item.AnhBia)" alt="Sản phẩm 1">
+                                </a>
+                                @*//////////////SUA*@
+                                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaSach = item.MaSach, @strURL = Request.Url.ToString() }))
+                                {<input class="num" type="text" value="1" name="boot" style="display:none">
+                                    <div class="buttonAdd">
+                                        <button type="button" class="buy">
+                                            <a href="~/GioHang/GioHang" style="display: inline-block;width: 100%;height: 100%;">
+                                                <div style="color:white;margin-top: 7px;">MUA NGAY</div>
+                                            </a>
+                                        </button>
+                                        <button type="submit" class="add-to-cart">THÊM VÀO GIỎ</button>
+                                    </div>
+                                }
+                                <div class="details">
+                                    <div class=nameProduct>
+                                        <a href="#">@item.TenSach</a>
+                                    </div>
+                                    <div class="priceProduct">
+                                        @String.Format("{0:0,0}", item.GiaBan)đ
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    }
+
+
+                }
+            }
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+@*hết code*@
+
+
+
+<!-- Bộ Sưu Tập -->
+<div class="container-fluid containGallarey">
+    <div class="row">
+        <div class="col-lg-12 gallareySection">
+            <div class="col-lg-4 gallarey">
+                <a href="#">
+                    <div class="gallareyTitle">
+                        <p>Bộ Sưu Tập</p>
+                        <h4>Đại Sứ Thương Hiệu</h4>
+                    </div>
+                    <div class="gallareyPicture">
+                        <img src="../Assets/gallarey_1.jpg" alt="Bộ sưu tập">
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 gallarey">
+                <a href="#">
+                    <div class="gallareyTitle">
+                        <p>Bộ Sưu Tập</p>
+                        <h4>Đại Sứ Thương Hiệu</h4>
+                    </div>
+                    <div class="gallareyPicture">
+                        <img src="../Assets/gallarey_2.jpg" alt="Bộ sưu tập">
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 gallarey">
+                <a href="#">
+                    <div class="gallareyTitle">
+                        <p>Bộ Sưu Tập</p>
+                        <h4>Đại Sứ Thương Hiệu</h4>
+                    </div>
+                    <div class="gallareyPicture">
+                        <img src="../Assets/gallarey_3.jpg" alt="Bộ sưu tập">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sản Phẩm Mới -->
+<div class="bestSeller">
+    <p>Sản phẩm mới</p>
+    <div class="viewAll">
+        <a href="#">Xem thêm</a>
+    </div>
+</div>
+<!--Send Email-->
+<div class="container-fluid containSendEmail">
+    <div class="row">
+        <div class="col-lg-12 background">
+            <div class="sectionSendEmail">
+                <div class="title">
+                    <h2>ĐĂNG KÝ</h2>
+                    <p>
+                        Đăng ký nhận bản tin của Runner Inn để cập nh5ật những sản phẩm mới,
+                        nhận thông tin ưu đãi đặc biệt và thông tin giảm giá khác.
+                    </p>
+                </div>
+                <div class="input-group mb-3 emailSearch">
+                    <input type="text" class="form-control" placeholder="Nhập email của bạn" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">GỬI</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Picture-->
+<div class="container-fluid containPicture">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="bestSeller">
+                <p>Khách hàng và Runner Inn</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 sectionPicture">
+            <div class="col-lg-2 itemPicture">
+                <img src="../Assets/pic1.png" alt="Pic1">
+            </div>
+            <div class="col-lg-2 itemPicture">
+                <img src="../Assets/pic2.png" alt="Pic1">
+            </div>
+            <div class="col-lg-2 itemPicture">
+                <img src="../Assets/pic3.png" alt="Pic1">
+            </div>
+            <div class="col-lg-2 itemPicture">
+                <img src="../Assets/pic4.png" alt="Pic1">
+            </div>
+            <div class="col-lg-2 itemPicture">
+                <img src="../Assets/pic5.png" alt="Pic1">
+            </div>
+            <div class="col-lg-2 itemPicture">
+                <img src="../Assets/pic6.png" alt="Pic1">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<div class="container-fuild containFooter">
+    <div class="row">
+        <div class="col-lg-12 mainFooter">
+            <div class="col-lg-3 footerBlock">
+                <div class="title">
+                    <h5>GIỚI THIỆU</h5>
+                </div>
+                <div class="content">
+                    <p>Runner Inn trang mua sắm trực tuyến của thương hiệu giày, thời trang nam, nữ, phụ kiện, giúp bạn tiếp cận xu hướng thời trang mới nhất.</p>
+                    <img src="../Assets/checked.png" alt="Đã thông báo">
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook-f icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-twitter icon"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-google-plus-g icon"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 footerBlock">
+                <div class="title">
+                    <h5>THÔNG TIN LIÊN HỆ</h5>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li><span>Địa chỉ:</span> Tầng 4, tòa nhà Flemington, số 182, đường Lê Đại Hành, phường 15, quận 11, Tp. Hồ Chí Minh.</li>
+                        <li><span>Điện thoại:</span> 1900.636.099</li>
+                        <li><span>Fax:</span> 1900.636.099</li>
+                        <li><span>Mail:</span> hi@haravan.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 footerBlock">
+                @Html.Action("MapPartial", "LogIn")
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 copyrightFooter">
+            <p>Copyright © 2019 Runner Inn. Powered by Haravan</p>
+        </div>
+    </div>
+</div>

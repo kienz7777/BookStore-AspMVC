@@ -1,0 +1,47 @@
+*{margin: 0; padding: 0;}
+body,html{width: 100%; height: 100%; overflow-x: hidden;}
+
+article .left{
+    border-top: 1px solid #ededed;
+}
+article .left .text{
+    margin-top: 10rem;
+}
+article .left .text h2{
+    font-family: 'Quicksand', sans-serif;
+}
+article .left .text:after{
+    content: '';
+    display: block;
+    height: 3px;
+    margin-top: 15px;
+    width: 50px;
+    background-color: black;
+}
+
+
+article .right{
+
+    border-left: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+}
+
+article .right form{
+    margin-top: 10rem;
+}
+
+article .right form .form-group .form-control{
+    background: #ededed;
+}
+article .right form .form-group .form-control:focus{
+    background: #fff;
+}
+
+article .right form .form-group a{
+    text-decoration: none;
+}
+
+article .right form a.regis{
+    text-decoration: none;
+    color: white;
+}

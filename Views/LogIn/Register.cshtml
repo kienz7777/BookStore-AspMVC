@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6  left">
+                    <div class="text">
+                        <h2>Tạo Tài Khoản</h2>
+                    </div>
+                    
+                <h2>@ViewBag.message</h2>
+                </div>
+
+                <div class="col-lg-6  right">
+                    @using (Html.BeginForm())
+                    {
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Họ Tên" name="TenKH">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Số Điện Thoại" name="SDT">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Địa Chỉ" name="DiaChi">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Giới Tính" name="GioiTinh">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Số Tài Khoản" name="STK">
+                        </div>
+
+                        <div class="form-group">
+
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Enter email" name="email">
+
+                        </div>
+                        <div class="form-group">
+
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                   placeholder="Password" name="password">
+                        </div>
+
+                        <div class="form-group">
+
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                   placeholder="Retype Password" name="password1">
+                        </div>
+
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            <a href="">
+                                <p>Quên Mật Khẩu</p>
+                            </a>
+                        </div>
+
+                        <button type="submit" class="btn btn-warning">Đăng Ký</button>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </article>
+

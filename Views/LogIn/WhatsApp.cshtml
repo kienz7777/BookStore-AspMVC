@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "WhatsApp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6  left">
+                <div class="text">
+                    <h2>Để hoàn tất đăng nhập, vui lòng kiểm tra mã OTP trên điện thoại của bạn</h2>
+                    <h2 style="color:red">@ViewBag.message</h2>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6  right">
+                @using (Html.BeginForm())
+                {
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" style="width:100px;padding:10px" />
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter mã OTP" name="otp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Xác Thực</button>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</article>
+
+

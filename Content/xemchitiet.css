@@ -1,0 +1,122 @@
+
+body{
+    display: flex;
+    background-color: #f7f7f7;
+}
+.detailProduct .title{
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 25px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.detailProduct .title > p{
+    font-weight: 900;
+    font-size: 12px;
+    color: #7a8699;
+}
+.detailProduct .title > h4 {
+    font-weight: 900;
+    color: #0d3064;
+}
+
+
+
+/*------------------*/
+
+.board {
+    max-height: 411px;
+    overflow: auto;
+    padding-left: 25px;
+}
+    .board .infoBoard {
+        display: flex;
+        padding: 30px;
+        background: #fff;
+        border-radius: 3px;
+        box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    }
+.board .infoBoard .coverImage{
+    padding: 61px;
+}
+.board .infoBoard .coverImage > img{
+    max-width: 300px;
+    max-height: 300px;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid #ebecf0;
+    vertical-align: middle;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+.board .infoBoard .list-group{
+    max-width: 500px;
+}
+
+.board .infoBoard .list-group-item .back{
+    color: #969696;
+}
+.board .infoBoard .list-group-item .back:hover{
+    color: #313131;
+}
+.board .infoBoard .list-group-item .edit{
+    position: absolute;
+    right: 40px;
+    color: #969696;
+}
+.board .infoBoard .list-group-item .delete{
+    position: absolute;
+    right: 0px;
+    color: #969696;
+}
+.board .infoBoard .list-group-item .delete:hover{
+    color: #e03a3a;
+}
+.board .infoBoard .list-group-item .edit:hover{    
+    color: #1b4584;
+}
+.board .infoBoard > ul > li{
+    display: flex;
+}
+.board .infoBoard > ul > li > h6{
+    padding-right: 10px;
+}
+.board .infoBoard > ul > li .head{
+    color: #cc4d29;
+}
+
+/*-------------*/
+.modal-header > h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #0d3064;
+}
+
+.modal-body .name {
+    font-weight: 700;
+    color: #f44336;
+}
+
+.modal-body .nameBook {
+    display: flex;
+}
+
+    .modal-body .nameBook > p {
+        margin-bottom: 3px;
+        margin-right: 3px;
+    }
+
+.modal-footer .btn-secondary {
+    color: #fff;
+    background-color: #e3e9ed;
+    border-color: #e3e9ed;
+}
+
+.modal-footer .btn-primary {
+    color: #fff !important;
+    background-color: #f44336;
+    border-color: #f44336;
+}

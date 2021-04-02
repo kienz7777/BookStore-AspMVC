@@ -1,0 +1,578 @@
+﻿*{margin: 0; padding: 0;}
+body,html{width: 100%; height: 100%; overflow-x: hidden;}
+
+
+.containHead{
+    padding-left: 0;
+    padding-right: 0;
+}
+header{
+    width: 100%;
+    height: 36px;
+}
+header .banner{
+    width: 100%;
+    height: 36px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    line-height: 35px;
+    color: white;
+    background-color: #4267b2;
+    overflow: hidden;
+}
+
+@media (min-width : 576px) and (max-width : 767.98px){
+
+    header .banner{
+        font-size: 11px;
+    }
+}
+
+@media (max-width : 575.98px)
+{
+    header .banner{
+        font-size: 0px;
+        
+    }
+}
+
+/* end header-------------------------------------------------------- */
+
+.containMenu{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.menuTop{
+    width: 100%;
+    height: 66px;
+    
+}
+
+.menuTop > ul{
+    width: 1160px;
+    margin: auto;
+    display: flex;
+    list-style: none;
+}
+.menuTop > ul > li{}
+a.logo{
+    width: 180px;
+    height: 50px;
+    display: inline-block;
+    margin-top: 7px;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.item{
+    width: 100%;
+    height: 66px;
+    font-size: 17px;
+    margin-right: 20px;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    position: relative;
+    padding-top: 15px;
+    
+}
+li.one {
+    margin-left: 100px;
+}
+.item a.layer1{
+  
+    text-decoration: none;
+    color: black;
+  
+}
+.item .layer2{
+    position: absolute;
+    transition: 0.4s ease;
+    
+  
+    z-index: 1;
+    top:130px;
+    opacity: 0;
+    visibility: hidden;
+}
+.item .layer2 > ul{
+    list-style: none;
+    width: 160px;
+    height: 115px;
+    background-color: antiquewhite;
+    margin-top: 21px;
+}
+.item .layer2 > ul > li{
+    width: 100%;
+    height: 33.33%;
+    
+    border-bottom: 1px solid black;
+}
+.item .layer2 > ul > li a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
+}
+.item:hover .layer2{
+    top:45px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.menuTop > ul > li.startIcon{
+    margin-left: 34px;
+}
+.menuTop > ul > li.startIcon2 {
+    display: flex;
+}
+
+.menuTop > ul > li span.count {
+    font-size: 11px;
+    margin-top: 35px;
+    color: red;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}
+
+.menuTop > ul > li a.icon0 {
+    background-image: url(../Assets/login.png);
+    background-size: cover;
+    width: 22px;
+    height: 22px;
+    margin-top: 20px;
+    margin-left: 10px;
+    text-indent: -9999px;
+    display: inline-block;
+}
+
+.menuTop > ul > li a.icon1 {
+    background-image: url(../Assets/shopping-cart.png);
+    background-size: cover;
+    width: 22px;
+    height: 22px;
+    margin-top: 20px;
+    margin-left: 10px;
+    text-indent: -9999px;
+    display: inline-block;
+}
+#icon{
+    display: flex;
+    margin-left: 10px;
+    padding-top: 15px;
+}
+
+input[type="text"] {
+    height: 32.5px;
+    width: 200px;
+    border: 1px solid #ccc;
+    color: #555;
+    
+}
+#icon a.icon{
+    width: 45px;
+    height: 32.5px;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    display: inline-block;
+}
+
+
+@media (min-width : 576px) and (max-width : 767.98px){
+
+   
+}
+
+@media (max-width : 575.98px)
+{
+   
+}
+/*---------------------------------------*/
+.bestSeller {
+    margin: 50px 0 0;
+}
+
+    .bestSeller > p {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .bestSeller .viewAll {
+        padding-top: 10px;
+        text-align: center;
+    }
+
+        .bestSeller .viewAll > a {
+            text-decoration: none;
+            font-size: 13px;
+            color: #272727;
+        }
+
+    .bestSeller > p:before {
+        position: relative;
+        content: "";
+        display: block;
+        width: 55px;
+        height: 1px;
+        bottom: -60px;
+        margin: 0 auto;
+        background: #000000;
+    }
+
+.loop {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.productBlock {
+    margin-bottom: 30px;
+}
+
+    .productBlock .details {
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        z-index: 1;
+    }
+
+        .productBlock .details .priceProduct {
+            font-weight: bold;
+        }
+
+        .productBlock .details .nameProduct a {
+            text-decoration: none;
+            color: black;
+        }
+
+    .productBlock .buttonAdd {
+        width: 100%;
+        border: none;
+        align-items: center;
+        display: flex;
+        bottom: -32px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        transition: all ease 0.75s;
+    }
+
+        .productBlock .buttonAdd button {
+            width: 100%;
+            height: 31px;
+            font-size: 11px;
+            background: black;
+            border: none;
+            color: white;
+            margin-right: 5px;
+        }
+
+    .productBlock:hover .buttonAdd {
+        opacity: 1;
+        bottom: 0px;
+        visibility: visible;
+        z-index: 0;
+    }
+
+/*------------ Bộ Sưu Tập--------- */
+
+.gallareySection {
+    display: flex;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 10px;
+}
+
+    .gallareySection .gallarey {
+        position: relative;
+        overflow: hidden;
+        padding-left: 3px;
+        padding-right: 3px;
+        display: flex;
+        justify-content: center;
+    }
+
+        .gallareySection .gallarey .gallareyPicture {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .gallareySection .gallarey a:hover .gallareyPicture {
+            opacity: 0.3;
+            transform: scale(1.5);
+            transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .gallareySection .gallarey a:hover .gallareyTitle h4::after {
+            width: 120px;
+            transition: all 0.5s ease-in-out;
+        }
+
+.containGallarey .gallareySection .gallarey .gallareyTitle {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    padding-left: 100px;
+    padding-top: 120px;
+}
+
+.gallareySection .gallarey .gallareyTitle > h4 {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+    .gallareySection .gallarey .gallareyTitle > h4::after {
+        content: '';
+        margin: auto;
+        margin-top: 30px;
+        display: block;
+        background: black;
+        width: 60px;
+        height: 5px;
+    }
+
+@media (min-width : 1200px) {
+    .containProduct {
+        width: 1200px;
+    }
+}
+
+/*------------ Send Email--------- */
+.containSendEmail {
+    padding-top: 50px;
+    height: 349px;
+}
+
+    .containSendEmail .background {
+        background-image: url("../Assets/background.png");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .containSendEmail .sectionSendEmail {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .containSendEmail .sectionSendEmail {
+        max-width: 525px;
+        color: white;
+    }
+
+.emailSearch {
+    height: 65px;
+}
+
+.emailSearch input[type="text"] {
+    height: 65px;
+    border: none;
+}
+
+.btn-outline-secondary {
+    color: white;
+    border-color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: black;
+    font-size: 12px;
+}
+
+.form-control {
+    padding-left: 25px;
+}
+
+/* ---Section Picture---*/
+
+.containPicture .sectionPicture {
+    display: flex;
+    padding-top: 50px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+    .containPicture .sectionPicture .itemPicture {
+        padding-left: 3px;
+        padding-right: 3px;
+        position: relative;
+        overflow: hidden;
+    }
+
+        .containPicture .sectionPicture .itemPicture::before {
+            position: absolute;
+            top: 0;
+            left: -75%;
+            z-index: 2;
+            display: block;
+            content: '';
+            width: 50%;
+            height: 100%;
+            background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+            -webkit-transform: skewX(-25deg);
+            transform: skewX(-25deg);
+        }
+
+        .containPicture .sectionPicture .itemPicture:hover::before {
+            -webkit-animation: shine 1s;
+            animation: shine 1s;
+        }
+
+@-webkit-keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+
+.containPicture .bestSeller > p {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+/* ----Footer-----*/
+/*--block1--*/
+.containFooter {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+    .containFooter .mainFooter {
+        display: flex;
+    }
+
+        .containFooter .mainFooter .footerBlock .title, .content > h4, p {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 500;
+        }
+
+        .containFooter .mainFooter .footerBlock .content > img {
+            width: 150px;
+        }
+
+        .containFooter .mainFooter .footerBlock > ul {
+            display: flex;
+            padding-top: 15px;
+        }
+
+            .containFooter .mainFooter .footerBlock > ul li {
+                list-style: none;
+            }
+
+                .containFooter .mainFooter .footerBlock > ul li a {
+                    width: 40px;
+                    height: 40px;
+                    background-color: #fff;
+                    text-align: center;
+                    line-height: 38px;
+                    font-size: 20px;
+                    margin: 0 10px;
+                    display: block;
+                    border-radius: 50%;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid black;
+                    z-index: 1;
+                }
+
+                    .containFooter .mainFooter .footerBlock > ul li a .icon {
+                        position: relative;
+                        color: #262626;
+                        transition: .5s;
+                        z-index: 3;
+                    }
+
+                    .containFooter .mainFooter .footerBlock > ul li a:hover .icon {
+                        color: #fff;
+                        transform: rotateY(360deg);
+                    }
+
+                    .containFooter .mainFooter .footerBlock > ul li a:before {
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: #f00;
+                        transition: .5s;
+                        z-index: 2;
+                    }
+
+                    .containFooter .mainFooter .footerBlock > ul li a:hover:before {
+                        top: 0;
+                    }
+
+                .containFooter .mainFooter .footerBlock > ul li:nth-child(1) a:before {
+                    background: #3b5999;
+                }
+
+                .containFooter .mainFooter .footerBlock > ul li:nth-child(2) a:before {
+                    background: #55acee;
+                }
+
+                .containFooter .mainFooter .footerBlock > ul li:nth-child(3) a:before {
+                    background: #0077b5;
+                }
+
+                .containFooter .mainFooter .footerBlock > ul li:nth-child(4) a:before {
+                    background: #dd4b39;
+                }
+        /*--block2--*/
+        .containFooter .mainFooter .footerBlock .content > ul {
+            padding-left: 20px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: normal;
+        }
+
+            .containFooter .mainFooter .footerBlock .content > ul > li > span {
+                font-family: 'Quicksand', sans-serif;
+                font-weight: bold;
+            }
+    /*--Copyright--*/
+    .containFooter .copyrightFooter {
+        padding-top: 10px;
+        border-top: 1px dashed #e0d9d6;
+    }
+
+        .containFooter .copyrightFooter > p {
+            font-family: 'Quicksand', sans-serif;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+/* end menu ----------------*/
+
+.containSlide {
+    padding-left: 0;
+    padding-right: 0;
+}
+h1, h3, h4, h5, h6 {
+    color: #272727;
+    margin: 0 0 13px 0;
+    font-weight: 500;
+    line-height: 1.2;
+    font-family: 'Quicksand', sans-serif;
+}
+a{
+    color: black;
+}
+a:hover {
+    color: black;
+}

@@ -1,0 +1,144 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="@Url.Content("~/Content/home.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/LogIn.css")">
+    <link rel="stylesheet" href="@Url.Content("../Content/Register.css")">
+
+</head>
+
+<body>
+
+    <div class="container-fluid containHead">
+        <div class="row">
+            <div class="col-lg-12">
+                <header>
+                    <div class="banner">
+                        MIỄN PHÍ VẬN CHUYỂN VỚI ĐƠN HÀNG NỘI THÀNH > 300K - ĐỔI TRẢ TRONG 30 NGÀY - ĐẢM BẢO CHẤT LƯỢNG
+                    </div>
+                    @Html.Action("LogPartial", "LogIn")
+                </header>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid  containMenu">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="menuTop">
+                    <ul>
+                        <li>
+                            <a href="~/Home/Index" class="logo">
+                                <img src="../Assets/logo.png" alt="">
+                            </a>
+                        </li>
+
+                        <li class="one">
+                            <div class="item">
+                                <a href="" class="layer1">Trang Chủ</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="item">
+                                <a href="" class="layer1">Bộ Sưu Tập</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="item">
+
+                                <a href="" class="layer1">Chủ Đề</a>
+                                @*Action Partial View*@
+
+
+                                <div class="layer2">
+                                    <ul>
+                                        @Html.Action("ChuDePartial", "ChuDe")
+                                        @*<li><a href="">Sản Phẩm - Style1</a></li>
+                                            <li><a href="">Sản Phẩm - Style2</a></li>
+                                            <li><a href="">Sản Phẩm - Style3</a></li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="item">
+                                <a href="" class="layer1">Giới Thiệu</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="item">
+                                <a href="" class="layer1">Blog</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="item">
+                                <a href="" class="layer1">Liên Hệ</a>
+                            </div>
+                        </li>
+
+
+                        <li class="startIcon">
+
+                            @Html.ActionLink("login", "Log", "LogIn", null, new { @class = "icon0" })
+
+                        </li>
+
+                        <li class="startIcon2">
+
+                            @Html.Action("GioHangPartial", "GioHang")
+                        </li>
+
+                        <li id="icon">
+
+                            <input type="text" placeholder="Search for...">
+
+                            <a href="" class="icon">
+                                <img src="../Assets/search.png" alt="">
+                            </a>
+
+
+                        </li>
+
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    @RenderBody()
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

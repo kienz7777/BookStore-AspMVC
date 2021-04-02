@@ -1,0 +1,57 @@
+﻿@model BookStoreASP.Models.TacGia
+@{
+    ViewBag.Title = "XemChiTietTacGia";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutManage.cshtml";
+}
+
+<div class="detailProduct">
+    <div class="title">
+        <h4>Thông tin tác giả</h4>
+        <p>BẠN CÓ THỂ CHỈNH SỬA VÀ XÓA TÁC GIẢ TẠI ĐÂY </p>
+    </div>
+    <div class="board">
+        <div class="infoBoard">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a class="back" href="@Url.Action("XemTacGia", "Admin")"><h3><i class="fa fa-arrow-left" aria-hidden="true"></i></h3></a>
+                    <a class="edit" href="@Url.Action("ChinhSuaTacGia", "Admin", new { idTacGia = Model.MaTacGia }, null)"><h3><i class="fa fa-cog" aria-hidden="true"></i></h3></a>
+                    <a class="delete" href="" data-toggle="modal" data-target="#exampleModalCenter"><h3><i class="fa fa-trash" aria-hidden="true"></i></h3></a>
+                </li>
+
+                <li class="list-group-item"><h6 class="head">Mã tác giả:</h6> <h6>@Html.DisplayFor(modelItem => Model.MaTacGia)</h6></li>
+                <li class="list-group-item"><h6 class="head">Tên tác giả:</h6> <h6>@Html.DisplayFor(modelItem => Model.TenTacGia)</h6></li>
+                <li class="list-group-item"><h6 class="head">Địa chỉ:</h6> <h6>@Html.DisplayFor(modelItem => Model.DiaChi)</h6></li>
+                <li class="list-group-item"><h6 class="head">Tiểu sử:</h6> <h6>@Html.DisplayFor(modelItem => Model.TieuSu)</h6></li>
+                <li class="list-group-item"><h6 class="head">Số điện thoại:</h6> <h6>@Html.DisplayFor(modelItem => Model.SDT)</h6></li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Xóa sản phẩm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="nameBook">
+                        <p>Bạn có muốn xóa tác giả </p>
+                            <p class="name">@Html.DisplayFor(modelItem => Model.TenTacGia)</p>
+                        <p>?</p>
+                    </div>
+                    <p>Tác giả đã xóa không thể phục hồi lại được.</p>
+                </div>
+                <div class="modal-footer">
+
+                    <a class="btn btn-secondary" data-dismiss="modal">Hủy</a>
+                        <a href="
+                            @Url.Action("XoaTacGia", "Admin", new { idTacGia = Model.MaTacGia }, null)
+                       " class="btn btn-primary">Xóa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

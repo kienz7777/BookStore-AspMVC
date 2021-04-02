@@ -1,0 +1,37 @@
+﻿@model BookStoreASP.Models.KhachHang
+@{
+    ViewBag.Title = "Log";
+    Layout = null;
+}
+@*thêm css cho maps*@
+<link rel="stylesheet" href="@Url.Content("~/Content/maps.css")">
+
+<div class="col-lg-6 footerBlock">
+    
+
+    <div class="control">
+        <button type="submit" id="showmap">Chỉ Đường</button>
+        <h4>@ViewBag.DN</h4>
+        <div id="instructions"></div>
+    </div>
+    
+
+    <div id="panel">
+
+        <option id="source" value="@Html.DisplayFor(modelItem => Model.DiaChi)"></option>
+
+        <option id="destination" value="301 Võ Văn Ngân, Bình Thọ, Thủ Đức, Hồ Chí Minh, Việt Nam, vi"></option>
+
+        <option id="mode" value="DRIVING"></option>
+
+    </div>
+
+
+    <div id="map"></div>
+</div>
+
+@*script map*@
+<script src="@Url.Content("~/Content/maps.js")"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC58Pa1xnAA7rcKkgAcwX28G0-gyWLpryU&callback=initMap&language=en"></script>
+

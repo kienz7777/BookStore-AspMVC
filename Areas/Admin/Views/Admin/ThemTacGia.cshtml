@@ -1,0 +1,63 @@
+﻿@model BookStoreASP.Models.TacGia
+
+@{
+    ViewBag.Title = "ThemTacGia";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutManage.cshtml";
+}
+
+
+@using (Html.BeginForm("ThemTacGia", "Admin", FormMethod.Post))
+{
+    <div class="addProduct">
+        <div class="title">
+            <h4>Thông tin tác giả</h4>
+            <p>VUI LÒNG CUNG CẤP CÁC THÔNG TIN VỀ TÁC GIẢ SẼ TẠO</p>
+        </div>
+        <div class="col-lg-9">
+            <div class="table">
+                <div class="infoTable">
+                    <div class="info">
+                        <ul class="list-group list-group-flush head">
+                            <li class="list-group-item">
+                                <a class="back" href="@Url.Action("XemSanPham", "Admin")"><h3><i class="fa fa-arrow-left" aria-hidden="true"></i></h3></a>
+                            </li>
+                        </ul>
+                        <h5>@ViewBag.ThongBao</h5>
+                        <form>
+                            <div class="form-group">
+                                <p>Tên tác giả</p>
+                                <input type="" class="form-control" id="" placeholder="" name="TenTacGia">
+                            </div>
+                            <div class="formBox">
+                                <div class="form-group">
+                                    <p>Địa chỉ</p>
+                                    <input type="" class="form-control" id="" placeholder="" name="DiaChi">
+                                </div>
+                                <div class="form-group">
+                                    <p>Số điện thoại</p>
+                                    <input type="" class="form-control" id="" placeholder="" name="SDT">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Tiểu sử tác giả</p>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="TieuSu"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Thêm mới</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="timePick">
+        <div class="table">
+            <div class="infoTable">
+                <div class="info">
+                    <form>
+                        <img src="~/Assets/ThemTacGia.jpg" width="240px" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

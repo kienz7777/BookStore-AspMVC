@@ -1,0 +1,87 @@
+﻿@using BookStoreASP.Models
+@model Sach
+
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<link rel="stylesheet" href="@Url.Content("~/Content/show.css")">
+
+
+
+
+<div class="container showItem">
+    <div class="row">
+        <div class="col-lg-6 showLeft">
+            <img class="showImg" src="../Assets/@Url.Content(Model.AnhBia)" alt="">
+        </div>
+
+        <div class="col-lg-6 showRight">
+            <div class="showContent">
+                <h3>@Model.TenSach</h3>
+
+                <b>Giá:</b>
+                <h3>@String.Format("{0:0,0}", Model.GiaBan)đ</h3>
+
+                @*<b>Số Lượng:</b>
+                    <div class="number">
+                        <div class="btn btn-outline-primary decrease">-</div>
+                        <input class="num" type="text" value="1" name = "boot">
+                        <div class="btn btn-outline-primary increase">+</div>
+                    </div>*@
+
+                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMaSach = Model.MaSach, @strURL = Request.Url.ToString() }))
+                {
+                    <b>Số Lượng:</b>
+                    <div class="number">
+                        <div class="btn btn-outline-primary decrease">-</div>
+                        <input class="num" type="text" value="1" name="boot">
+                        <div class="btn btn-outline-primary increase">+</div>
+                    </div>
+
+                    <div class="buying">
+                        <button type="submit" class="buyLeft">
+
+                            <span>THÊM VÀO GIỎ</span>
+                        </button>
+                        @*<div type="submit" class="buyLeft">
+                                <span>THÊM VÀO GIỎ</span>
+                            </div>*@
+
+                        <button type="button" class="buyRight">
+                            @Html.ActionLink("xem", "GioHang", "GioHang", null, new { @class = "watch" })
+                            <span>MUA NGAY</span>
+                        </button>
+                        @*<div class="buyRight">
+                                <span>MUA NGAY</span>
+                            </div>*@
+                    </div>
+                }
+
+
+                <div class="connectMe">
+                    <span>CLICK ĐỂ TƯ VẤN ONLINE</span>
+                </div>
+
+                <b>Chủ Đề:</b>
+                <span>@ViewBag.TenChuDe</span>
+                <br>
+                <b>Nhà Xuất Bản:</b>
+                <span>@ViewBag.TenNhaXuatBan</span>
+                <br>
+                <b>Tác Giả:</b>
+                <span>@ViewBag.TenTacGia</span>
+                <br>
+                <b>Mô Tả:</b>
+                <p>@Model.MoTa</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="@Url.Content("~/Content/show.js")"></script>

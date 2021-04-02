@@ -1,0 +1,61 @@
+﻿@model IEnumerable< BookStoreASP.Models.Sach>
+@{
+    ViewBag.Title = "XemSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutManage.cshtml";
+}
+
+    <div class="viewProduct">
+        <div class="title">
+            <h4>Danh sách sản phẩm</h4>
+            <p>VUI LÒNG CLICK VÀO SẢN PHẨM ĐỂ XEM THÔNG TIN CHI TIẾT</p>
+        </div>
+        <div class="search">
+            @using (Html.BeginForm())
+            { 
+            <form>
+                <div class="form-group width">
+                    <a href="@Url.Action("Manage","Admin")" class="form-control filter">Thêm sách
+                    </a>
+                </div>
+                <div class="input-group mb-3">
+                    <p><i class="fa fa-search" aria-hidden="true"></i></p>
+                    <input type="text" class="form-control searchText" placeholder="Tìm kiếm sách" aria-label="Username" aria-describedby="basic-addon1" name="TenSach">
+                </div>
+            </form>
+            }
+        </div>
+        <div class="board">
+            <div class="infoBoard">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Mã sách</th>
+                            <th scope="col">Tên sách</th>
+                            <th scope="col">Giá bán</th>
+                            <th scope="col">Số Lượng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">@Html.DisplayFor(modelItem => item.MaSach)</th>
+                                <td>
+                                    <a href="@Url.Action("XemChiTietSanPham","Admin", new { idSach = item.MaSach })">
+                                        <img src="@Url.Content("~/Assets/"+item.AnhBia)" width="50px" />
+                                        @Html.DisplayFor(modelItem => item.TenSach)
+                                    </a>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.GiaBan) VNĐ</td>
+                                <td>@Html.DisplayFor(modelItem => item.SoLuong)</td> 
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+                <h5>@ViewBag.ThongBao</h5>
+            </div>
+        </div>
+    </div>
+
